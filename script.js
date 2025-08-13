@@ -1,5 +1,5 @@
 const API_KEY = "RGAPI-20a7a950-9ca1-465a-88c7-e2938db5bc7c"; // Remplace par ta clé API
-const SUMMONER_NAME = "GLX Dæms#GLX";
+const SUMMONER_NAME = "Boromir#GLX";
 const REGION = "euw1"; // Par exemple, pour l'Europe
 const CHAMPION_ID = 64; // ID de Lee Sin
 
@@ -32,4 +32,5 @@ function updateProgressBar(points) {
 
 // Appeler la fonction toutes les heures (3600000 ms)
 setInterval(fetchMasteryPoints, 3600000);
+
 fetchMasteryPoints(); // Appel initial
