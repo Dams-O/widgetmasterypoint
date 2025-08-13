@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Barre de Maîtrise Lee Sin</title>
+    <style>
+        body {
+            background-color: transparent; /* Fond transparent pour OBS */
+            font-family: Arial, sans-serif;
+        }
+        .progress-container {
+            width: 500px;
+            background-color: #222;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid #FFD700; /* Bordure dorée pour Lee Sin */
+        }
+        .progress-bar {
+            height: 30px;
+            background-color: #4CAF50; /* Vert inspiré de Lee Sin */
+            width: 0%;
+            transition: width 0.5s ease-in-out;
+            text-align: center;
+            color: white;
+            line-height: 30px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar">0 / 100000</div>
+    </div>
+    <script src="script.js"></script> <!-- Colle le script JavaScript ici -->
+</body>
+</html>
