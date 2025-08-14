@@ -4,6 +4,11 @@
     <title>Barre de Maîtrise Lee Sin</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+        @keyframes pulse {
+            0% { transform: translateY(-50%) scale(1); }
+            50% { transform: translateY(-50%) scale(1.1); }
+            100% { transform: translateY(-50%) scale(1); }
+        }
         body, .progress-text {
             font-family: 'Roboto', sans-serif;
         }
@@ -13,8 +18,8 @@
             color: #fff;
         }
         .progress-container {
-            width: 500px;
-            height: 50px; /* Hauteur augmentée pour intégrer le logo */
+            width: 600px;
+            height: 70px; /* Hauteur augmentée pour intégrer le logo */
             background-color: #7c9ce3; /* Bleu clair pour le fond */
             position: relative; /* Pour positionner le logo */
         }
@@ -30,8 +35,8 @@
             transition: width 1s ease-in-out, background-color 0.3s;
         }
         .lee-sin-logo {
-            width: 40px;
-            height: 40px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%; /* Logo rond */
             position: absolute;
             left: 5px;
@@ -39,7 +44,8 @@
             transform: translateY(-50%); /* Centrer verticalement */
             background-image: url('https://ddragon.leagueoflegends.com/cdn/14.16.1/img/champion/LeeSin.png');
             background-size: cover;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            animation: pulse 2s infinite;
         }
         .progress-text {
             margin-left: 10px;
@@ -65,4 +71,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
