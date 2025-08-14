@@ -3,6 +3,10 @@
 <head>
     <title>Barre de Maîtrise Lee Sin</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+        body, .progress-text {
+            font-family: 'Roboto', sans-serif;
+        }
         body {
             background-color: transparent; /* Fond transparent pour OBS */
             font-family: Arial, sans-serif;
@@ -23,6 +27,7 @@
             align-items: center; /* Centrer verticalement le texte et le logo */
             padding-left: 60px; /* Espace pour le logo */
             box-sizing: border-box;
+            transition: width 1s ease-in-out, background-color 0.3s;
         }
         .lee-sin-logo {
             width: 40px;
@@ -34,6 +39,7 @@
             transform: translateY(-50%); /* Centrer verticalement */
             background-image: url('https://ddragon.leagueoflegends.com/cdn/14.16.1/img/champion/LeeSin.png');
             background-size: cover;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
         }
         .progress-text {
             margin-left: 10px;
@@ -50,7 +56,6 @@
     </style>
 </head>
 <body>
-    <div class="title">Maîtrise Lee Sin : Objectif 100 000</div>
     <div class="progress-container">
         <div class="lee-sin-logo"></div>
         <div class="progress-bar" id="progressBar">
@@ -60,3 +65,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
