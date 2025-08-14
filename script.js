@@ -2,7 +2,7 @@ const API_KEY = 'RGAPI-1b3f7486-9aef-4f10-bedb-1b2c79d328ba'; // Ta clé API val
 const GAME_NAME = 'GLX Dæms'; // Partie avant le #
 const TAG_LINE = 'GLX';
 const REGION = 'europe'; // Région pour l'endpoint account
-const LOL_REGION = 'euw1'; // Région pour les endpoints LoL
+const LOL_REGION = 'euw1'; // Région pour l'endpoint mastery
 const CHAMPION_ID = 64; // Lee Sin
 
 async function fetchMasteryPoints() {
@@ -18,28 +18,15 @@ async function fetchMasteryPoints() {
         const puuid = accountData.puuid;
         console.log('PUUID:', puuid); // Pour déboguer
 
-        // Étape 2 : Récupérer le Summoner ID via le PUUID
-        const summonerResponse = await fetch(
-            `https://${LOL_REGION}.api.riotgames.com/lol/summoner/v4/summoners/by-puuid/${puuid}?api_key=${API_KEY}`
-        );
-        if (!summonerResponse.ok) {
-            throw new Error(`Erreur HTTP (Summoner): ${summonerResponse.status} - ${summonerResponse.statusText}`);
-        }
-        const summonerData = await summonerResponse.json();
-        console.log('Summoner Data:', summonerData); // Pour voir la réponse complète
-        const summonerId = summonerData.id;
-        if (!summonerId) {
-            throw new Error('Summoner ID non trouvé dans la réponse');
-        }
-
-        // Étape 3 : Récupérer les points de maîtrise de Lee Sin
+        // Étape 2 : Récupérer les points de maîtrise de Lee Sin directement avec le PUUID
         const masteryResponse = await fetch(
-            `https://${LOL_REGION}.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/${summonerId}/by-champion/${CHAMPION_ID}?api_key=${API_KEY}`
+            `https://${LOL_REGION}.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-puuid/${puuid}/by-champion/${CHAMPION_ID}?api_key=${API_KEY}`
         );
         if (!masteryResponse.ok) {
             throw new Error(`Erreur HTTP (Mastery): ${masteryResponse.status} - ${masteryResponse.statusText}`);
         }
         const masteryData = await masteryResponse.json();
+        console.log('Mastery Data:', masteryData); // Pour déboguer
         updateProgressBar(masteryData.championPoints);
     } catch (error) {
         console.error('Erreur:', error);
