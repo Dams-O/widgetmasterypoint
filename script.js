@@ -36,15 +36,17 @@ async function fetchMasteryPoints() {
 }
 
 function updateProgressBar(points) {
+    const pointsforgoal = points - 45972;
     const goal = 100000;
-    const percentage = Math.min((points / goal) * 100, 100);
+    const percentage = Math.min((pointsforgoal / goal) * 100, 100);
     const progressBar = document.getElementById('progressBar');
     const progressText = document.querySelector('.progress-text');
     progressBar.style.width = `${percentage}%`;
-    progressText.innerText = `${Math.round(percentage)}% (${points})`;
+    progressText.innerText = `${Math.round(percentage)}% (${pointsforgoal})`;
 }
 
 setInterval(fetchMasteryPoints, 3600000); // Mise à jour toutes les heures
 fetchMasteryPoints(); // Appel initial
+
 
 
