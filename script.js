@@ -39,10 +39,12 @@ function updateProgressBar(points) {
     const goal = 100000;
     const percentage = Math.min((points / goal) * 100, 100);
     const progressBar = document.getElementById('progressBar');
+    const progressText = document.querySelector('.progress-text');
     progressBar.style.width = `${percentage}%`;
-    progressBar.innerText = `${points} / ${goal}`;
+    progressText.innerText = `${Math.round(percentage)}% (${points})`;
 }
 
 setInterval(fetchMasteryPoints, 3600000); // Mise à jour toutes les heures
 fetchMasteryPoints(); // Appel initial
+
 
