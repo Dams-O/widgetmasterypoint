@@ -36,7 +36,7 @@ async function fetchMasteryPoints() {
 }
 
 function updateProgressBar(points) {
-    const pointsforgoal = points - 40000;
+    const pointsforgoal = points - 20000;
     const goal = 100000;
     const percentage = Math.min((pointsforgoal / goal) * 100, 100);
     const progressBar = document.getElementById('progressBar');
@@ -47,6 +47,7 @@ function updateProgressBar(points) {
 
 setInterval(fetchMasteryPoints, 3600000); // Mise à jour toutes les heures
 fetchMasteryPoints(); // Appel initial
+
 
 
 
