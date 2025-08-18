@@ -1,4 +1,4 @@
-const API_KEY = 'RGAPI-c06a08b9-2a19-42f0-aed4-b542be6f8383'; // Ta clé API valide
+const API_KEY = 'RGAPI-aa8052e1-d502-46ab-87e9-78d9a9a692b9'; // Ta clé API valide
 const GAME_NAME = 'GLX Dæms'; // Partie avant le #
 const TAG_LINE = 'GLX';
 const REGION = 'europe'; // Région pour l'endpoint account
@@ -47,6 +47,7 @@ function updateProgressBar(points) {
 
 setInterval(fetchMasteryPoints, 3600000); // Mise à jour toutes les heures
 fetchMasteryPoints(); // Appel initial
+
 
 
 
