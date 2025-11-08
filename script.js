@@ -1,4 +1,4 @@
-const API_KEY = 'RGAPI-5fe3122c-80a0-4ed0-b8ee-4a8dd6213af2'; // Ta clé API valide
+const API_KEY = 'RGAPI-13b35c03-7639-4a94-99ad-c35bb1ad3957'; // Ta clé API valide
 const GAME_NAME = 'GLX LHomme Saoul'; // Partie avant le #
 const TAG_LINE = 'GLX';
 const REGION = 'europe'; // Région pour l'endpoint account
@@ -47,6 +47,7 @@ function updateProgressBar(points) {
 
 setInterval(fetchMasteryPoints, 3600000); // Mise à jour toutes les heures
 fetchMasteryPoints(); // Appel initial
+
 
 
 
